@@ -11,7 +11,6 @@
 </head>
 
 <body>
-	<h1>Prueba</h1>
     <?php 
         include('../Layout/header.php');
     ?>
