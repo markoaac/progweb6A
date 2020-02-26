@@ -8,6 +8,8 @@
     $cmd->bind_param("ss",$nombre,$password);
     $cmd->execute();
     $cmd->store_result();
+    $cmd->bind_result($Id,$Nombre,$Id_Rol,$Usuario,$Pwd);
+    $cmd->fetch();
     /*$cmd = "select * from Usuarios where".
     " usuario='".$nombre."' and pwd='".$password.
     //' or 'a' = 'a
@@ -16,7 +18,8 @@
     if($cmd->num_rows > 0){
        $_SESSION['autenticado'] = true;
        $_SESSION['usuario'] = $nombre;
-       header("location: Principal.php");
+       $_SESSION['IdUsuario'] = $Id;
+       header("location: Obras.php");
     }
     else{
         //acción cuando es incorrecto

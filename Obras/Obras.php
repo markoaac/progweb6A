@@ -41,7 +41,7 @@
             </thead>
             <tbody>
                 <?php
-                    $cmd = "select * from Obras";
+                    $cmd = "select * from Obras where Id in (select Id_Obra from ObrasUsuarios where Id_Usuario=". $_SESSION['IdUsuario'].")";
                     $resultado = $conexion->query($cmd);
                     while($row = $resultado->fetch_array(MYSQLI_ASSOC)) : ?> <!-- Cierre de PHP y continuamos con HTML -->
                         <tr>
