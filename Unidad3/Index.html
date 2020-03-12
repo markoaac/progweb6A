@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--formato json-->
+    <input style="color: green;" value="99">
+    <br>
+    <p>
+        Instituto Tecnológico Superior de Tez
+    </p>
+    <p>
+        Ingeniería Forestal
+    </p>
+
+    <br>
+    <input type="text" id="txtNombre">
+    <br>
+    <button onclick="imprimirNombre();">
+        Llamar función</button>
+
+    <div id="contenedor">
+
+    </div>
+    <button id="btnAgregar">Agregar</button>
+    <script>
+
+        document.getElementById("btnAgregar").
+        addEventListener("click",agregarInputs);
+
+        function agregarInputs(){
+            var contenedor = document.getElementById("contenedor");
+            var input = document.createElement("input");
+            input.value = "100";
+            input.style.color = "yellow";
+            contenedor.appendChild(input);
+        }
+
+
+
+        var parrafos = document.
+        getElementsByTagName("p");
+
+        var mensaje = prompt("Ingrese un mensaje");
+        parrafos[1].innerHTML = mensaje;
+        //Comentario
+        parrafos[0].onclick = function(){
+            alert(parrafos[0].innerHTML);
+        }
+        //var i = parseInt();
+        parrafos[1].addEventListener("click",mensaje2);
+
+        function mensaje2(){
+            parrafos[1].style.color = "red";
+            parrafos[1].style.backgroundColor = "yellow";
+        }
+        
+        //definición de función
+        function imprimirNombre(){
+            //definición de variable
+            var nombre = document.
+            getElementById("txtNombre").value;
+            //cuadro de diálogo
+            alert(nombre);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btnPrueba">Prueba JQuery</button>
+    <button class="prueba">Prueba JQuery</button>
+    <button >Prueba JQuery</button>
+    <button class="prueba">Prueba JQuery</button>
+    <button >Prueba JQuery</button>
+
+    <br>
+    <input type="text" id="txtNombre">
+    <input type="text">
+    <input type="text">
+    <br>
+    <p id="lorem">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A voluptates odit voluptatem delectus natus reprehenderit, dignissimos rem officiis autem, officia quisquam! Corporis exercitationem voluptates, at nesciunt illo vitae natus unde.
+    </p>
+
+    <div id="nombres">
+
+    </div>
+    <br>
+    <br>
+    <div>
+        <input type="text" id="txtNombre2" >
+        <br>
+        <select name="" id="cmbCarreras">
+            <option value="ISC">ISC</option>
+            <option value="INF">INF</option>
+            <option value="MEC">MEC</option>
+        </select>    
+        <br>
+        <input type="number" name="" id="txtSemestre">
+        <br>
+        <input type="text" id="txtControl" />
+        <br>
+        <button id="agregarFila">Agregar</button>
+        <br>
+        <table id="tblDatos">
+            <tr>
+                <th>Nombre</th>
+                <th>Carrera</th>
+                <th>Semestre</th>
+                <th>No Control</th>
+            </tr>
+        </table>
+    </div>
+    <button id="btnAgregarNombre">Agregar nombre</button>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        $("#agregarFila").click(function(){
+            var nombre = $("#txtNombre2").val();
+            var carrera = $("#cmbCarreras").val();
+            var semestre = $("#txtSemestre").val();
+            var control = $("#txtControl").val();
+            var salida = "<tr><td>" + 
+                nombre +"</td>" +
+                "<td>"+carrera+"</td>" +
+                "<td>" +semestre +"</td>"+
+                "<td>"+control +"</td></tr>";
+                $("#tblDatos").append(salida);
+        });
+        //sintaxis
+        //Para etiquetas $("etiqueta")->$("input"),$("button")
+        //$("form"),$("p")...etc
+        /*$("button").click(function(){
+            alert("Click de botón");
+        });*/
+        //para elementos con ID se pone el #
+        /*$("#btnPrueba").click(function(){
+            alert("click un solo botón");
+        });*/
+        //para las clases se le pone un punto
+        /*$(".prueba").click(function(){
+            alert("botones con class prueba");
+        });*/
+        $("#btnAgregarNombre").click(function(){
+            var salida = "";
+            /*salida += "<ol>";
+            for(var i = 1; i <= 10; i++){
+                salida += "<li>Nombre: " + (i*i) + "</li>";
+            }
+            salida += "</ol>";*/
+            for(var i = 0; i <= 10; i++){
+                salida += "<input type='number' id='txt" +
+                i + "' />";
+            }
+            $("#nombres").append(salida);
+        });
+        $("#btnPrueba").click(function(){
+            //var valor = $("#txtNombre").val();
+            //var valor = document.getElementById("txtNombre").value;
+            //alert(valor);
+            //var parrafos = document.getElementsByTagName("p");
+            //alert($("p:first").text());
+            //$("#lorem").toggle();
+            //$("#lorem").css("color","red");
+            $("input").each(function(){
+                alert($(this).val());
+            });
+        });
+    </script>
+</body>
+</html>
